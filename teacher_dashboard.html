@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard - Attendance Tracker</title>
+    <link rel="stylesheet" href="login_reg.css"> 
+</head>
+<body>
+    <div class="container">
+        <header>
+            
+            <p>Manage your classes and attendance</p>
+        </header>
+
+        
+        <section id="class-selection-view">
+            <h2>Select a Class</h2>
+            <div class="card-grid" id="class-list">
+                
+            </div>
+        </section>
+
+        
+        <section id="attendance-view" style="display: none;">
+            <button id="back-btn" class="secondary-btn">← Back to Classes</button>
+            <h2 id="current-class-title">Class Name</h2>
+
+           <h2 id="current-class-title">Class Name</h2>
+
+<div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 15px; margin: 15px 0;">
+    <div class="date-selection" style="display: flex; align-items: center; gap: 10px;">
+        <label for="attendance-date"><strong>Attendance Date:</strong></label>
+        <input type="date" id="attendance-date" style="padding: 8px; border-radius: 5px; border: 1px solid #ccc;">
+    </div>
+    
+    <div class="report-selection" style="display: flex; align-items: center; gap: 10px; background: #e9ecef; padding: 10px; border-radius: 8px;">
+        <label for="report-month"><strong>Report Month:</strong></label>
+        <input type="month" id="report-month" style="padding: 6px; border-radius: 5px; border: 1px solid #ccc;">
+        <button id="download-report" class="primary-btn" style="padding: 6px 12px; font-size: 14px;">📥 Download CSV</button>
+    </div>
+</div>
+
+<div style="margin-bottom: 15px; display: flex; gap: 10px;">
+    <button id="mark-all-present" class="secondary-btn" style="border: 1px solid #2d5a27; padding: 5px 10px; border-radius: 5px;">✓ Mark All Present</button>
+    <button id="mark-holiday" class="secondary-btn" style="border: 1px solid #e74c3c; color: #e74c3c; padding: 5px 10px; border-radius: 5px;">🏖️ Mark Holiday</button>
+</div>
+            
+            <div class="card">
+                <table class="attendance-table">
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Scholar Number</th>
+                            <th>Attendance %</th>
+                            <th>Mark Attendance</th>
+                        </tr>
+                    </thead>
+                    <tbody id="student-list">
+                        
+                    </tbody>
+                </table>
+                <button id="save-attendance" class="primary-btn">Save Attendance</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="teacher_dashboard.js"></script>
+</body>
+</html>

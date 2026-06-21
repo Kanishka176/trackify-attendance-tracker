@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trackify | Admin Dashboard</title>
+    <link rel="stylesheet" href="login_reg.css"> </head>
+<body>
+    <header class="navbar">
+        <h1>Trackify Admin</h1>
+        <button id="logoutBtn" class="btn-secondary">Log Out</button>
+    </header>
+
+    <main class="admin-container">
+        <section class="welcome-section">
+            <h2>Management Console</h2>
+            <p>Select an action to manage school records.</p>
+        </section>
+
+        <div class="admin-grid">
+            <div class="card">
+                <h3>Student Management</h3>
+                <button onclick="toggleModal('studentModal')" class="btn-primary">Add New Student</button>
+                <button onclick="location.href='#view-students'" class="btn-outline">Update/Remove Student</button>
+            </div>
+
+            <div class="card">
+                <h3>Teacher Management</h3>
+                <button onclick="toggleModal('teacherModal')" class="btn-primary">Add New Teacher</button>
+                <button onclick="location.href='#view-teachers'" class="btn-outline">Update/Remove Teacher</button>
+            </div>
+            
+            <div class="card">
+                <h3>Security Management</h3>
+                <button onclick="resetUserPassword()" class="btn-primary">Force Password Reset</button>
+                <button onclick="location.href='forgot_password.html'" class="btn-outline">Go to Reset Portal</button>
+            </div>
+        </div>
+        
+
+        <section class="data-table-section">
+            <h3>Record Directory</h3>
+            <div class="filter-controls">
+                <input type="text" id="searchInput" placeholder="Search by name or ID...">
+            </div>
+            <table id="userTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Role</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="admin_dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - AttendEase</title>
+    <link rel="stylesheet" href="login_reg.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <header>
+            <h1>Welcome, Student!</h1>
+            <p>Your Attendance Overview</p>
+        </header>
+
+        <section class="date-lookup" style="margin-bottom: 30px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+    <h3>Check Daily Attendance</h3>
+    <div style="display: flex; gap: 10px; align-items: center; margin-top: 10px;">
+        <input type="date" id="view-date" style="padding: 8px; border-radius: 5px; border: 1px solid #ccc;">
+        <button id="check-btn" class="primary-btn" style="width: auto;">View Status</button>
+    </div>
+    <div id="date-result" style="margin-top: 15px; font-weight: bold; font-size: 1.1rem;">
+        </div>
+</section>
+
+        
+        <section class="main-stats">
+            <div class="stat-card highlight">
+                <h3>Overall Attendance</h3>
+                <div class="percentage-circle">--%</div>
+                <p>Status: <span>--</span></p>
+            </div>
+        </section>
+
+       
+        <section class="charts-grid">
+            <div class="chart-container">
+                <h3>Subject-wise Attendance (%)</h3>
+                <canvas id="subjectChart"></canvas>
+            </div>
+            
+            <div class="chart-container">
+                <h3>Monthly Absents</h3>
+                <canvas id="monthlyChart"></canvas>
+            </div>
+        </section>
+
+       
+        <section class="subject-list">
+            <h3>Detailed Breakdown</h3>
+            <table class="attendance-table">
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Attended</th>
+                        <th>Missed</th>
+                        <th>Total Classes</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                   
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <script src="student_dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trackify - Attendance Management System</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .landing-container {
+            width: 100%;
+            max-width: 1200px;
+            padding: 40px 20px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 60px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar h1 {
+            color: white;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .navbar-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .navbar-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .navbar-links a.btn-primary {
+            background: #2d6a4f;
+            padding: 12px 30px;
+        }
+
+        .navbar-links a.btn-primary:hover {
+            background: #1f4434;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(45, 106, 79, 0.3);
+        }
+
+        .hero {
+            text-align: center;
+            color: white;
+            margin-bottom: 80px;
+        }
+
+        .hero h2 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-buttons a {
+            padding: 15px 40px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-register {
+            background: #2d6a4f;
+            color: white;
+        }
+
+        .btn-register:hover {
+            background: #1f4434;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(45, 106, 79, 0.4);
+        }
+
+        .btn-login {
+            background: white;
+            color: #667eea;
+        }
+
+        .btn-login:hover {
+            background: #f0f0f0;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .feature-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            font-size: 15px;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .footer {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: 80px;
+        }
+
+        .footer p {
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .navbar-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .hero h2 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .hero-buttons a {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="landing-container">
+        <!-- Navbar -->
+        <div class="navbar">
+            <h1>🎯 Trackify</h1>
+            <div class="navbar-links">
+                <a href="login.html">Login</a>
+                <a href="registeration.html" class="btn-primary">Register</a>
+            </div>
+        </div>
+
+        <!-- Hero Section -->
+        <div class="hero">
+            <h2>Attendance Management Made Simple</h2>
+            <p>Track, manage, and monitor attendance efficiently. Perfect for schools, colleges, and organizations.</p>
+            
+            <div class="hero-buttons">
+                <a href="registeration.html" class="hero-buttons btn-register">Create Account</a>
+                <a href="login.html" class="hero-buttons btn-login">Login</a>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Real-time Tracking</h3>
+                <p>Monitor attendance records in real-time with instant updates and notifications for all users.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">👥</div>
+                <h3>Multi-Role Support</h3>
+                <p>Separate dashboards for Students, Teachers, and Admins with role-based access control.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📈</div>
+                <h3>Analytics & Reports</h3>
+                <p>Detailed attendance analytics, charts, and subject-wise breakdowns for better insights.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>Secure & Reliable</h3>
+                <p>Secure authentication with encrypted passwords and reliable data storage.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Fast & Responsive</h3>
+                <p>Optimized for speed with a responsive design that works on all devices.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🎓</div>
+                <h3>Educational Focus</h3>
+                <p>Designed specifically for academic institutions with all necessary features.</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>&copy; 2026 Trackify. All rights reserved. | Simple Attendance Management System</p>
+        </div>
+    </div>
+</body>
+</html>
