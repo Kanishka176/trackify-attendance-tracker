@@ -1,3 +1,4 @@
+
 # Trackify - Attendance Management System
 
 ## 📋 Project Setup & Status
@@ -278,3 +279,5 @@ npm install
 
 **Last Updated:** April 19, 2026
 **Status:** ✅ All systems operational
+# trackify-attendance-tracker
+Attendance management system supporting students, teachers and admins
